@@ -11,12 +11,12 @@ Interaction-platform-for-students/
 ├── templates/
 │   ├── index.html
 │   ├── navbar.html
-|   ├── profile.html
-|   ├── login.html
-|   ├── Question_page.html
-|   ├── answer.html
-|   └── recent_questions.html
-|   
+│   ├── profile.html
+│   ├── login.html
+│   ├── Question_page.html
+│   ├── answer.html
+│   └── recent_questions.html
+│   
 ├── static/
 │   ├── CSS/
 │   │   ├── styles.css
