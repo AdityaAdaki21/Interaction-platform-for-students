@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBMS</title>
+  <link rel="stylesheet" href="static/CSS/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="gradient-background">
+    {% include 'navbar.html' %}
+    <div class="container col-xxl-8 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <div>
+          <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">A dedicated interaction platform<br> made for
+            students made by students.</h1>
+          <p class="lead"></p>
+          <br>
+          <br>
+          <br>
+          <a href="/question"><button type="button" class="btn btn-outline-dark btn-lg px-4">Add Question</button></a>
+          <a href="/recent_questions"><button type="button" class="btn btn-outline-dark btn-lg px-4">Answer
+              Questions</button></a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container py-5 px-5">
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 105px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Leadership</h5>
+              <p class="card-text">The art of guiding and motivating individuals or teams to achieve common goals and
+                make informed decisions.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Time management</h5>
+              <p class="card-text">Efficiently organizing and prioritizing tasks to optimize productivity and achieve
+                work-life balance.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Public Speaking</h5>
+              <p class="card-text">The skill of effectively conveying ideas and information to an audience with
+                confidence and clarity.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 px-5">
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 105px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">OOPs</h5>
+              <p class="card-text">A very effective programming paradigm that uses objects and classes to structure and
+                design software
+                systems.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">DBMS</h5>
+              <p class="card-text">Software systems that manage and organize data in structured databases for efficient
+                storage and retrieval.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">IoT and Blockchain</h5>
+              <p class="card-text"> Technologies that enable connected devices and secure, decentralized data
+                transactions in various applications </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 px-5">
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 105px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">DSA</h5>
+              <p class="card-text">Fundamental concepts and techniques for organizing and processing data efficiently in
+                computer science.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Web Development</h5>
+              <p class="card-text">The process of creating websites and web applications, including front-end and
+                back-end development.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 66.6667%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">App Development</h5>
+              <p class="card-text">Creating user friendly software applications for mobile devices or desktops, often
+                involving coding
+                and design.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-5 px-5">
+      <div class="row" data-masonry="{&quot;percentPosition&quot;: true }" style="position: relative; height: 125px;">
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 0%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">AIML</h5>
+              <p class="card-text">Fields focused on using data and algorithms to create intelligent systems and extract
+                insights from information.
+              </p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4" style="position: absolute; left: 33.3333%; top: 0px;">
+          <div class="card text-center">
+            <div class="card-body">
+              <h5 class="card-title">Other</h5>
+              <p class="card-text">A catch-all category for various subjects or topics not explicitly listed, such as
+                ethics, entrepreneurship, and more.</p>
+              <p class="card-text"><a href="/recent_questions"
+                  class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Explore</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="gradient-background">
+    <div class="container">
+      <footer class="p-4 mt-5">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">Explore</a></li>
+          <li><a href="/question" target="_self" class="nav-link px-2 link-body-emphasis">Question</a></li>
+          <li><a href="#" class="nav-link px-2 link-body-emphasis">About</a></li>
+        </ul>
+        <p class="text-center text-body-primary">@2023 CSE(AIML) GRP-4</p>
+      </footer>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="/static/JS/index.js" charset="UTF-8"></script>
+</body>
+
+</html>

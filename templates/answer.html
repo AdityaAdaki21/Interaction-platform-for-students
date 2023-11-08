@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Give an Answer</title>
+
+    <link rel="stylesheet" href="/static/CSS/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        /* Add this to your CSS or a separate CSS file and adjust styles as needed */
+        .answer-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .answer-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            background-color: #fff;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .user-info p {
+            font-weight: bold;
+        }
+
+        .answer-text {
+            margin-top: 10px;
+        }
+
+        /* Styles for the star rating system */
+        .star-rating {
+            display: inline-block;
+            font-size: 0;
+        }
+
+        .star-rating .star {
+            display: inline-block;
+            margin: 0 2px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navbar.html -->
+    <section class="gradient-background">
+        {% include 'navbar.html' %}
+    </section>
+
+    <div class="container px-5 mt-5">
+        <h2 class="mb-4">Give an Answer</h2>
+        <div class="container px-3">
+            <div id="recentQuestions">
+                <h3>
+                    <p>{{ question.Question }}</p>
+                </h3>
+
+            </div>
+
+            <form id="answerForm" method="post" action="/answer_question/{{ question.Q_ID }}">
+                <input type="hidden" name="question_id" value="{{ question.Q_ID }}">
+                <div class="form-floating m-3">
+                    <textarea class="form-control" placeholder="Type your answer here!" style="height: 100px"
+                        id="answer" name="answer" rows="4" required=""></textarea>
+                    <label for="answer" class="form-label">Your Answer:</label>
+                </div>
+                <button type="submit" class="btn btn-dark m-3">Submit Answer</button>
+            </form>
+            <br>
+            <br>
+            <!-- Conditional rendering of answers -->
+            <div class="answer-cards">
+                {% for answer in answers %}
+                <div class="answer-card">
+                    <div class="user-info">
+                        <p>{{ answer.Name }}</p>
+                    </div>
+                    <div class="answer-text">
+                        {{ answer.Answer }}
+                        {% if not user_has_reviewed_answer(answer.A_ID, user_prn) %}
+                        <form method="post" action="/submit_rating">
+                            <input type="hidden" name="answer_id" value="{{ answer.A_ID }}">
+                            <label for="rating">Rate this answer (1-5):</label>
+                            <select name="rating">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <input type="submit" value="Submit Rating" class="btn btn-dark m-3">
+                        </form>
+                        {% else %}
+                        <p>You have already reviewed this answer.</p>
+                        {% endif %}
+                        <p>Average Rating: {{ "%.1f"|format(answer.AvgRating) if answer.AvgRating is not none else "" }}
+                        </p>
+                        <!-- Display average rating -->
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+    </div>
+
+    <section class="gradient-background">
+        <div class="container">
+            <footer class="p-4 mt-5">
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                    <li><a href="#" class="nav-link px-2 link-body-emphasis">Explore</a></li>
+                    <li><a href="/question" target="_self" class="nav-link px-2 link-body-emphasis">Question</a></li>
+                    <li><a href="#" class="nav-link px-2 link-body-emphasis">About</a></li>
+                </ul>
+                <p class="text-center text-body-primary">@2023 CSE(AIML) GRP-4</p>
+            </footer>
+        </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="/static/JS/index.js"></script>
+
+
+
+</body>
+
+</html>
