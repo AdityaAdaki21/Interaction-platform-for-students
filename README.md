@@ -21,15 +21,15 @@ Interaction-platform-for-students/
 │   ├── CSS/
 │   │   ├── styles.css
 │   │   └── login.css
-|   |   
+│   │   
 │   ├── JS/
 │   │   ├── index.js
 │   │   └── registration.js
-|   |   
+│   │    
 │   └── images/
 │       ├── VIT_logo_Black.png
 │       └── VIT_logo.png
-|   
+│  
 ├── requirements.txt
 └── README.md
 
