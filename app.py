@@ -14,20 +14,22 @@ import logging
 from decimal import Decimal  # Import Decimal for handling Decimal values
 
 
+# Database connection
 mydb = mysql.connector.connect(
-    host="localhost", user="root", password="Aditya@21", database="cp"
+    host="localhost", user="root", password="your_password", database="cp"
 )
 
+# Flask app setup
 app = Flask(__name__, template_folder="templates", static_folder="static")
-app.secret_key = "your_secret_key"  # Replace with a strong secret key
+app.secret_key = "your_secret_key"
 
-# Configure logging
-app.logger.setLevel(logging.DEBUG)  # Set the log level to DEBUG or the desired level
-handler = logging.FileHandler("app.log")  # Log messages to a file named app.log
-handler.setLevel(logging.DEBUG)  # Set the log level for the file handler
+# Logging configuration
+app.logger.setLevel(logging.DEBUG)
+handler = logging.FileHandler("app.log")
+handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
-
+# Route for login or registration
 @app.route("/")
 def login_or_register():
     return render_template("login.html")
