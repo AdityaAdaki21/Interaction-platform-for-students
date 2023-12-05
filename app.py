@@ -29,6 +29,7 @@ handler = logging.FileHandler("app.log")
 handler.setLevel(logging.DEBUG)
 app.logger.addHandler(handler)
 
+
 # Route for login or registration
 @app.route("/")
 def login_or_register():
@@ -507,4 +508,4 @@ def update_expertise():
 
 if __name__ == "__main__":
     app.before_request(add_template_context)
-    app.run(host="192.168.224.3", port=5000)
+    app.run(host="127.0.0.1", port=5000, debug=True)
