@@ -7,7 +7,9 @@ A dedicated interaction platform made for students made by students.
 ## Project Structure 
 ```bash
 Interaction-platform-for-students/
-├── app.py
+├── api/
+│   ├── app.py
+│   └── __init__.py
 ├── templates/
 │   ├── index.html
 │   ├── navbar.html
@@ -16,22 +18,19 @@ Interaction-platform-for-students/
 │   ├── Question_page.html
 │   ├── answer.html
 │   └── recent_questions.html
-│   
 ├── static/
 │   ├── CSS/
 │   │   ├── styles.css
 │   │   └── login.css
-│   │   
 │   ├── JS/
 │   │   ├── index.js
 │   │   └── registration.js
-│   │    
 │   └── images/
 │       ├── VIT_logo_Black.png
 │       └── VIT_logo.png
-│  
 ├── requirements.txt
 └── README.md
+
 
 ```
 ## Run Locally
@@ -63,7 +62,7 @@ Install dependencies
 Start the server
 
 ```bash
-  python app.py
+  python api/app.py
 ```
 
 
