@@ -6,53 +6,149 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="/static/CSS/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/CSS/login.css">
+    <!-- <link rel="stylesheet" href="/static/CSS/login.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+        body {
+            margin: 0 auto;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bolder;
+        }
+
+        /*
+        Container div
+        */
+        div.container {
+            margin: 5em auto;
+            padding: 2em;
+            overflow: hidden;
+            border: 1px solid black;
+            max-width: 1091px;
+            max-height: auto;
+        }
+
+        /*
+        Styles for form fields
+        */
+        div.container label,
+        div.container input,
+        div.container button {
+            display: block;
+            width: 100%;
+            font-size: 1em;
+            margin-bottom: 1em;
+            /* Add some bottom margin for spacing */
+        }
+
+        div.container button {
+            padding: 1em;
+            margin-top: 2em;
+            /* Adjust top margin */
+        }
+
+        /*
+        Tab styles
+        */
+        .tab {
+            margin: 1em auto 0 auto;
+            /* Adjust top margin */
+            display: flex;
+            width: 100%;
+        }
+
+        .tablinks {
+            padding: 1em 0;
+            flex: 1;
+            /* Equal width for tab links */
+            text-align: center;
+            cursor: pointer;
+            border: 0.4px solid black;
+            transition: all 0.2s linear;
+        }
+
+        .active {
+            background-color: black;
+            color: white;
+        }
+
+        .tabcontent {
+            width: 100%;
+            margin: 0 auto 2em auto;
+            /* Adjust bottom margin */
+            padding: 2em 0;
+            overflow: hidden;
+            display: none;
+        }
+
+        .tabcontent.active {
+            display: block;
+        }
+
+        /*
+        Device-specific styles
+        */
+        @media only screen and (min-width: 1224px) {
+            div.container {
+                overflow: hidden;
+            }
+        }
+
+        @media only screen and (min-width: 1824px) {
+            div.container {
+                width: 600px;
+                /* Adjust width for larger screens */
+            }
+        }
+
+        @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+            div.container {
+                width: 80%;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <section class="h-100 h-custom gradient-background">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="container align-items-center">
+            <div class="row d-flex justify-content-center">
                 <div class="col-lg-8 col-xl-6">
                     <div class="card rounded-3">
                         <div class="card-body p-4 p-md-5">
                             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Login or Registration</h3>
 
-                            <!-- Login Form -->
-                            <form class="px-md-2" method="post" action="/login">
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <label for="email" class="form-label">Email<span
-                                                style="color: red;">*</span></label>
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" id="email" name="email" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <label for="prn" class="form-label">Password(PRN)<span
-                                                style="color: red;">*</span></label>
-                                        <div class="form-outline datepicker">
-                                            <input type="password" class="form-control" id="prn" name="prn" required="">
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Tab Controls -->
+                            <div class="tab">
+                                <div class="tablinks active" id="logintab" onclick="openForm('login')">Login</div>
+                                <div class="tablinks" id="signuptab" onclick="openForm('signup')">Sign up</div>
+                            </div>
 
-                                <button type="submit" class="btn btn-outline-dark btn-lg mb-3">Login</button>
-                            </form>
-                            <hr>
+                            <!-- Login Form -->
+                            <div class="tabcontent active" id="login">
+                                <form class="px-md-2" method="post" action="/login">
+                                    <label for="email" class="form-label">Email<span
+                                            style="color: red;">*</span></label>
+                                    <div class="form-outline">
+                                        <input type="text" class="form-control" id="email" name="email" required="">
+                                    </div>
+                                    <label for="prn" class="form-label">Password(PRN)<span
+                                            style="color: red;">*</span></label>
+                                    <div class="form-outline datepicker">
+                                        <input type="password" class="form-control" id="prn" name="prn" required="">
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-dark btn-lg">Login</button>
+                                </form>
+                            </div>
 
                             <!-- Registration Form -->
-                            <form class="px-md-2" method="post" action="/register">
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <label for="prn" class="form-label">PRN<span
-                                                style="color: red;">*</span></label>
-                                        <div class="form-outline datepicker">
-                                            <input type="text" class="form-control" id="prn" name="prn" required="">
-                                        </div>
+                            <div class="tabcontent" id="signup">
+                                <form class="px-md-2" method="post" action="/register">
+                                    <label for="prn" class="form-label">PRN<span style="color: red;">*</span></label>
+                                    <div class="form-outline datepicker">
+                                        <input type="text" class="form-control" id="prn" name="prn" required="">
                                     </div>
 
                                     <label class="form-label" for="name">Name<span style="color: red;">*</span></label>
@@ -61,35 +157,54 @@
                                             required="">
                                     </div>
 
-                                    <div class="col-md-6 mb-4">
-                                        <label for="year">Select Year<span style="color: red;">*</span></label>
-                                        <input type="number" id="year" name="year" class="form-control" required="">
+                                    <label for="year">Select Year<span style="color: red;">*</span></label>
+                                    <input type="number" id="year" name="year" class="form-control" required="">
 
-                                    </div>
-                                </div>
-
-                                <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
-                                    <div class="col-md-6">
-                                        <label class="form-label" for="email">Email<span
-                                                style="color: red;">*</span></label>
-                                        <div class="form-outline">
-                                            <input type="text" id="email" name="email" class="form-control" required="">
-                                        </div>
+                                    <label class="form-label" for="email">Email<span
+                                            style="color: red;">*</span></label>
+                                    <div class="form-outline">
+                                        <input type="text" id="email" name="email" class="form-control" required="">
                                     </div>
 
-                                </div>
-
-                                <button type="submit" class="btn btn-outline-dark btn-lg mb-3">Register</button>
-                            </form>
-
+                                    <button type="submit" class="btn btn-outline-dark btn-lg">Register</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- <script src="/static/JS/registration.js"></script> -->
 
+    <script>
+        function openForm(formId) {
+            var tabcontent = document.querySelectorAll(".tabcontent");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            document.getElementById(formId).classList.add("active");
+
+            var tablinks = document.querySelectorAll(".tablinks");
+            for (var i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+
+            var activeTabLink = document.getElementById(formId + "tab");
+            activeTabLink.classList.add("active");
+
+            // Change the button colors based on the active tab
+            var loginButton = document.getElementById("logintab");
+            var signupButton = document.getElementById("signuptab");
+
+            if (formId === "login") {
+                loginButton.classList.add("active");
+                signupButton.classList.remove("active");
+            } else if (formId === "signup") {
+                loginButton.classList.remove("active");
+                signupButton.classList.add("active");
+            }
+        }
+    </script>
 
 </body>
 
