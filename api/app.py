@@ -75,7 +75,7 @@ def register():
         # Handle registration as you did before
         PRN = request.form["prn"]
         Name = request.form["student_name"]
-        Year = request.form["year"]
+        Year = request.form["year"]  # This will now get the selected year value
         Mail = request.form["email"]
         GitHub = request.form.get(
             "github"
