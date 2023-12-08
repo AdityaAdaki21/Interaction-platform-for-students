@@ -1,5 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+}
+
+/*
+Container div
+*/
+div.container {
+    margin: 5em auto;
+    padding: 2em;
+    overflow: hidden;
+    /* border: 1px solid black; */
+    min-width: 900px;
+    max-width: 1091px;
+    max-height: auto;
+}
+
+/*
+Styles for form fields
+*/
+div.container label,
+div.container input,
+div.container button {
+    display: block;
+    width: 100%;
+    font-size: 1em;
+    margin-bottom: 1em;
+    /* Add some bottom margin for spacing */
+}
+
+div.container button {
+    padding: 1em;
+    margin-top: 2em;
+    /* Adjust top margin */
+}
+
+/*
+Tab styles
+*/
+.tab {
+    margin: 1em auto 0 auto;
+    /* Adjust top margin */
+    display: flex;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.tablinks {
+    padding: 1em 0;
+    flex: 1;
+    /* Equal width for tab links */
+    text-align: center;
+    cursor: pointer;
+    border: 0.4px solid black;
+    transition: all 0.2s linear;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+.tabcontent {
+    width: 100%;
+    margin: 0 auto 2em auto;
+    /* Adjust bottom margin */
+    padding: 2em 0;
+    overflow: hidden;
+    display: none;
+}
+
+.tabcontent.active {
+    display: block;
+    background-color: white;
+    color: black;
+}
+
+/*
+Device-specific styles
+*/
+@media only screen and (min-width: 1224px) {
+    div.container {
+        overflow: hidden;
+    }
+}
+
+@media only screen and (min-width: 1824px) {
+    div.container {
+        width: auto;
+        /* Adjust width for larger screens */
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    div.container {
+        width: 80%;
+    }
+}
+
 @media (min-width: 1025px) {
     .h-custom {
         height: 100vh !important;
+    }
+}
+
+.gradient-background {
+    display: flex;
+    background: linear-gradient(300deg, #E4F1FF, #AED2FF, #9400FF);
+    background-size: 180% 180%;
+    animation: gradient-animation 10s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
     }
 }
